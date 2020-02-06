@@ -37,10 +37,10 @@ export default function HomeScreen() {
       />
     }
     iconRight
-    title="Button"
+    title="Button2"
   />
           
-          
+
 
           <View style={styles.loginTextSection}>
    <TextInput placeholder='UserName' style={styles.inputText} />
