@@ -10,6 +10,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { MonoText } from '../components/StyledText';
 
@@ -20,56 +22,53 @@ export default function HomeScreen() {
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
+       
 
-        <View style = {styles.container}>
+      <Button style={styles.testing}
+        title="Outline button"
+        type="outline"
+      />
+  <Button style={styles.testing}
+    icon={
+      <Icon
+        name="arrow-right"
+        size={15}
+        color="white"
+      />
+    }
+    iconRight
+    title="Button"
+  />
+          
+          
+
+          <View style={styles.loginTextSection}>
+   <TextInput placeholder='UserName' style={styles.inputText} />
+   <TextInput placeholder='Password' style={styles.inputText} secureTextEntry={true}/>
+</View>
+
+
+<View style = {styles.container}>
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Email"
                placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"/>
+               autoCapitalize = "none"
+               />
             
             <TextInput style = {styles.input}
                underlineColorAndroid = "transparent"
                placeholder = "Password"
                placeholderTextColor = "#9a73ef"
-               autoCapitalize = "none"/>
+               autoCapitalize = "none"
+               />
             
-            <TouchableOpacity
-               style = {styles.submitButton}
-              >
-               <Text style = {styles.submitButtonText}> Submit </Text>
-            </TouchableOpacity>
+           
          </View>
-
 
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text>Hello, world!</Text>
       </View>
-
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Changin this!</Text>
-
-          <View
-            style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-           Changing this text!!!!
-          </Text>
-        </View>
 
         <View style={styles.helpContainer}>
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
@@ -82,7 +81,7 @@ export default function HomeScreen() {
 
       <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
+          Editting this tab bar!
         </Text>
 
         <View
@@ -147,6 +146,34 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     textAlign: 'center',
   },
+  loginTextSection: {
+    width: '50%',
+    height: '30%',
+
+ },
+
+ loginButtonSection: {
+    width: '100%',
+    height: '30%',
+    justifyContent: 'center',
+    alignItems: 'center'
+ },
+ input: {
+  alignItems: 'center',
+  height:100,
+  width: 100,
+  borderColor: '#7a42f4',
+  borderWidth: 1
+},
+ inputText: {
+    marginLeft: '20%',
+    width: '60%'
+ },
+
+ loginButton: {
+   backgroundColor: 'blue',
+   color: 'white'
+ },
   contentContainer: {
     paddingTop: 30,
   },
@@ -182,6 +209,16 @@ const styles = StyleSheet.create({
     color: 'rgba(96,100,109, 1)',
     lineHeight: 24,
     textAlign: 'center',
+  },
+
+  testing:{
+      height: 40,
+      width:160,
+      borderRadius:20,
+      backgroundColor : "white",
+      marginLeft :600,
+      marginRight:50,
+      marginTop :50
   },
   tabBarInfoContainer: {
     position: 'absolute',
