@@ -1,62 +1,239 @@
-import { AppLoading } from 'expo';
-import { Asset } from 'expo-asset';
-import * as Font from 'expo-font';
-import React, { useState } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import 'react-native-gesture-handler';
+import React from 'react';
+import {StyleSheet, Text, View, Button,Image, ImageBackground } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
+import Home from './Home';
 
-import AppNavigator from './navigation/AppNavigator';
-
-export default function App(props) {
-  const [isLoadingComplete, setLoadingComplete] = useState(false);
-
-  if (!isLoadingComplete && !props.skipLoadingScreen) {
-    return (
-      <AppLoading
-        startAsync={loadResourcesAsync}
-        onError={handleLoadingError}
-        onFinish={() => handleFinishLoading(setLoadingComplete)}
+function HomeScreen({navigation}){
+  return (
+    <Home navigation={navigation}/>
+  );
+}
+function TasksScreen({navigation}) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
       />
-    );
-  } else {
-    return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
+      <Button 
+        title="Go back" 
+        onPress={() => navigation.goBack()} 
+      />
+    </View>
+  );
+}
+function ProjectsScreen({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+function ChecklistScreen({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+function TimesheetScreen({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+function ActivityScreen({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+function PTOScreen({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+function ExpensesScreen({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+function SettingsScreen({navigation}){
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Home"
+        onPress={()=>navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
+
+
+function CustomDrawerContent(props) {
+
+  return (
+    
+    <DrawerContentScrollView {...props} >
+      <View style={styles.workerProfile}>
+        <Text style={styles.workerName}>Worker Name</Text>
+        <Text>Employee ID</Text>
+
       </View>
-    );
-  }
+      <DrawerItemList {...props} style={{flex:3}}/>
+      <View style={{flex:1,borderTopColor:'#95D0EB',borderTopWidth:1}}>
+        <DrawerItem
+          label="Settings"
+         onPress={() => props.navigation.navigate('Projects')}
+         icon={({ tintColor }) => (
+          <Image
+            source={require("./Icons/settings.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}
+        />
+      </View>
+    </DrawerContentScrollView>
+  );
 }
 
-async function loadResourcesAsync() {
-  await Promise.all([
-    Asset.loadAsync([
-      require('./assets/images/robot-dev.png'),
-      require('./assets/images/robot-prod.png'),
-    ]),
-    Font.loadAsync({
-      // This is the font that we are using for our tab bar
-      ...Ionicons.font,
-      // We include SpaceMono because we use it in HomeScreen.js. Feel free to
-      // remove this if you are not using it in your app
-      'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-    }),
-  ]);
+const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
+  return (
+    <Drawer.Navigator style={{flex:1}} drawerContent={props => CustomDrawerContent(props)}>
+        <Drawer.Screen name="Home" component={HomeScreen} options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/settings.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+        <Drawer.Screen name="Tasks" component={TasksScreen}options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/task.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+        <Drawer.Screen name="Projects" component={ProjectsScreen}options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/project.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+        <Drawer.Screen name="Checklist" component={ChecklistScreen} options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/checkList.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+        <Drawer.Screen name="Timesheet" component={TimesheetScreen} options={{drawerIcon:({ tintColor }) => (
+          <ImageBackground
+            source={require("./Icons/clockCircle.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, alignItems:'center',justifyContent:'center', tintColor: tintColor }}
+          >
+           <Image
+            source={require("./Icons/clockLeg.png")}
+            resizeMode="contain"
+            style={{ width: 10, height: 10, marginLeft:3,tintColor: tintColor }}
+          ></Image>  
+          </ImageBackground>
+        )}}/>
+        <Drawer.Screen name="Activity" component={ActivityScreen}options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/activity.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+        <Drawer.Screen name="PTO" component={PTOScreen}options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/ptoRequest.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+        <Drawer.Screen name="Expenses" component={ExpensesScreen}options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/expense.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+    </Drawer.Navigator>
+  );
 }
 
-function handleLoadingError(error) {
-  // In this case, you might want to report the error to your error reporting
-  // service, for example Sentry
-  console.warn(error);
-}
-
-function handleFinishLoading(setLoadingComplete) {
-  setLoadingComplete(true);
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyDrawer />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+  workerProfile:{
+    height:80, 
+    backgroundColor:'#EBF8FF',
+    alignItems:'center',
+    justifyContent: 'center'
+  },
+  workerName:{
+    fontStyle: 'normal',
+      fontWeight: '500',
+      fontSize:15,
+      color: 'rgba(0, 0, 0, 0.87)',
+      lineHeight:15,
+  }
 });
