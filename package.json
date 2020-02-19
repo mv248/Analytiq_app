@@ -10,6 +10,10 @@
   "dependencies": {
     "@react-native-community/masked-view": "0.1.5",
     "@react-navigation/drawer": "^5.0.1",
+<<<<<<< Updated upstream
+=======
+    "@react-navigation/material-top-tabs": "^5.0.5",
+>>>>>>> Stashed changes
     "@react-navigation/native": "^5.0.1",
     "@react-navigation/stack": "^5.0.1",
     "expo": "~36.0.0",
@@ -23,8 +27,8 @@
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
-    "babel-preset-expo": "~8.0.0",
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.0.0",
+    "babel-preset-expo": "~8.0.0"
   },
   "private": true
 }
