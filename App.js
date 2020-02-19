@@ -12,6 +12,8 @@ import {
 } from '@react-navigation/drawer';
 import PTO from './PTO';
 import Home from './Home';
+import NewTask from './NewTask';
+import AllProjects from './AllProjects';
 
 function HomeScreen({navigation}){
   return (
@@ -27,28 +29,12 @@ function Ptocheck({navigation}){
 }
 function TasksScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={()=>navigation.navigate('Home')}
-      />
-      <Button 
-        title="Go back" 
-        onPress={() => navigation.goBack()} 
-      />
-    </View>
+    <NewTask navigation={navigation}/>
   );
 }
 function ProjectsScreen({navigation}){
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={()=>navigation.navigate('Home')}
-      />
-    </View>
+    <AllProjects/>
   );
 }
 function ChecklistScreen({navigation}){
