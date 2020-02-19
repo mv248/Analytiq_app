@@ -2,12 +2,15 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet, Text, View, Button,Image, ImageBackground } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
+import PTO from './PTO';
 import Home from './Home';
 import NewTask from './NewTask';
 import AllProjects from './AllProjects';
@@ -15,6 +18,13 @@ import AllProjects from './AllProjects';
 function HomeScreen({navigation}){
   return (
     <Home navigation={navigation}/>
+  );
+}
+
+
+function Ptocheck({navigation}){
+  return (
+    <PTO navigation={navigation}/>
   );
 }
 function TasksScreen({navigation}) {
@@ -65,9 +75,11 @@ function PTOScreen({navigation}){
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
       <Button
-        title="Go to Home"
-        onPress={()=>navigation.navigate('Home')}
-      />
+        title="Go to PTO"
+        onPress={()=>this.props.navigation.navigate(`/PTO`)}
+        />
+
+        
     </View>
   );
 }
@@ -176,7 +188,7 @@ function MyDrawer() {
             style={{ width: 20, height: 20, tintColor: tintColor }}
           />
         )}}/> 
-        <Drawer.Screen name="PTO" component={PTOScreen}options={{drawerIcon:({ tintColor }) => (
+        <Drawer.Screen name="PTO" component={Ptocheck}options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/ptoRequest.png")}
             resizeMode="contain"
@@ -193,6 +205,20 @@ function MyDrawer() {
     </Drawer.Navigator>
   );
 }
+
+// const Stack = createStackNavigator();
+
+
+// function MyStack() {
+//   return (
+//   <Stack.Navigator>
+//         <Stack.Screen name="Home" component={HomeScreen} />
+//         <Stack.Screen name="PTO" component={Ptocheck} />
+//       </Stack.Navigator>
+        
+//   );
+// }
+
 
 export default function App() {
   return (

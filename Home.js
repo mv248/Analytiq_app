@@ -84,7 +84,7 @@ class Home extends Component{
               <View style={{flex:8,flexDirection:'row',justifyContent:'space-between'}}>
                 <View style={styles.buttonPTO}>
                   <TouchableHighlight style={styles.imageContainer3} >
-                    <Image 
+                    <Image
                         style={styles.image2}
                         source={require('./Icons/calendar.png')}
                     />
