@@ -30,7 +30,53 @@ class Home extends Component{
             <View style={{flex:3,backgroundColor:'white'}}>
               <View style={{flexDirection:'row',justifyContent:"space-between"}}>
                 <Text style={styles.todayTask}>TASKS TODAY</Text>
-                <View style={styles.viewAllButton}><Button title="View All" color='#3FA7D6'/></View>
+                <TouchableHighlight style={styles.button2}>
+                  <Text style={{color:"#3FA7D6"}}>VIEW ALL</Text>
+                </TouchableHighlight>
+              </View>
+              <View>
+                <View style={{flexDirection:"row",justifyContent:"space-between",marginHorizontal:25}}>
+                  <TouchableHighlight style={styles.circle}>
+                    <Text>1</Text>
+                  </TouchableHighlight>
+                  <View style={{flexDirection:"column"}}>
+                    <Text style={styles.textLocation}>12:00 PM, Location</Text>
+                    <Text style={styles.textTaskName}>Task Name</Text>
+                    <Text style={styles.textTaskType}>TASK TYPE</Text>
+                  </View>
+                  <Image 
+                    style={styles.image2}
+                    source={require('./Icons/upload.png')}
+                  />
+                  <Image 
+                    style={styles.image3}
+                    source={require('./Icons/checkIn.png')}
+                  />
+                </View>
+                <View style={{flexDirection:"row",justifyContent:"space-between",marginHorizontal:25}}>
+                  <TouchableHighlight style={styles.circle}>
+                    <Text>2</Text>
+                  </TouchableHighlight>
+                  <View style={{flexDirection:"column"}}>
+                    <Text style={styles.textLocation}>12:00 PM, Location</Text>
+                    <Text style={styles.textTaskName}>Task Name</Text>
+                    <Text style={styles.textTaskType}>TASK TYPE</Text>
+                  </View>
+                  <Image 
+                    style={styles.image2}
+                    source={require('./Icons/upload.png')}
+                  />
+                  <Image 
+                    style={styles.image3}
+                    source={require('./Icons/checkIn.png')}
+                  />
+                </View>
+              </View>
+              <View style={{flexDirection:"row",margin:10,marginHorizontal:25}}>
+                <TouchableHighlight style={styles.circle2}>
+                  <Text style={{color:"white", fontSize:24,fontWeight:"800",marginTop:-3}}>+</Text>
+                </TouchableHighlight>
+                <Text style={styles.textNewTask}>New Task</Text>
               </View>
             </View>
 
@@ -101,7 +147,6 @@ const styles = StyleSheet.create({
       alignItems:'center',
       justifyContent:'center',
     },
-    
     image:{
         height:15,
         width:20,
@@ -110,7 +155,10 @@ const styles = StyleSheet.create({
         height:25,
         width:20,
     },
-    
+    image3:{
+        height:26,
+        width:19,
+    },
     buttonPTO:{
       backgroundColor:'#EBF8FF',
       flex:2, 
@@ -134,7 +182,57 @@ const styles = StyleSheet.create({
       marginTop:15,
       marginLeft:0,
     },
-  
+    button2:{
+      borderColor:"#3FA7D6",
+      height:30,
+      width:100,
+      borderWidth:1,
+      borderRadius:4,
+      margin:12,
+      marginRight:25,
+      alignItems:"center",
+      justifyContent:"center"
+    },
+    circle:{
+      height:40,
+      width:40,
+      borderRadius:20,
+      alignItems:"center",
+      justifyContent:"center",
+      backgroundColor:"#EBF8FF",
+    },
+    circle2:{
+      height:25,
+      width:25,
+      borderRadius:12.5,
+      alignItems:"center",
+      justifyContent:"center",
+      backgroundColor:"rgba(0, 0, 0, 0.6)",
+
+    },
+    textLocation:{
+      color:"rgba(0, 0, 0, 0.87)",
+      fontSize:13,
+      fontWeight:"500",
+      margin:0,
+    },
+    textTaskName:{
+      color:"rgba(0, 0, 0, 0.6)",
+      fontSize:11,
+      margin:1,
+
+    },
+    textTaskType:{
+      color:"rgba(0, 0, 0, 0.38)",
+      fontSize:9,
+      margin:1,
+    },
+    textNewTask:{
+      marginHorizontal:25,
+      color:"rgba(0, 0, 0, 0.87)",
+      fontWeight:"500",
+      fontSize:13,
+    },
   });
 
   
