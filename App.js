@@ -20,8 +20,6 @@ function HomeScreen({navigation}){
     <Home navigation={navigation}/>
   );
 }
-
-
 function TasksScreen({navigation}) {
   return (
     <NewTask navigation={navigation}/>
@@ -43,8 +41,6 @@ function ChecklistScreen({navigation}){
     </View>
   );
 }
-
-
 function ActivityScreen({navigation}) {
   return (
     <Activity navigation={navigation}/>
@@ -70,7 +66,7 @@ function CustomDrawerContent(props) {
     <DrawerContentScrollView {...props} >
       <View style={styles.workerProfile}>
         <Text style={styles.workerName}>Worker Name</Text>
-        <Text>Employee ID</Text>
+        <Text>Employee ID: </Text>
 
       </View>
       <DrawerItemList {...props} style={{flex:3}}/>
