@@ -64,7 +64,7 @@ function BasicDetailsScreen({navigation}) {
   }];
   var radio_props = [
     {label: 'Self', value: 0 },
-    {label: 'Other(Select worker)', value: 1 }
+    {label: 'Other (Select worker)', value: 1 }
   ];
   
     return (
@@ -76,6 +76,9 @@ function BasicDetailsScreen({navigation}) {
         <TextInput style={styles.inputForm}/>
         <Text style={styles.textForm}>PROJECT</Text>
         <Dropdown containerStyle={{margin:10, marginHorizontal:25,borderWidth:1, borderColor:"#D6D6D6", height:40,justifyContent:"center"}}
+          placeholder='Select Project'
+          textColor='rgba(0, 0, 0, 0.38)'
+          fontSize={13}
           data={data}
           animationDuration={0}
           baseColor={"rgba(0, 0, 0, 0.6)"}
@@ -85,7 +88,7 @@ function BasicDetailsScreen({navigation}) {
         <Text style={styles.textForm}>TYPE OF TASK</Text>
         <Dropdown
           containerStyle={{margin:10, marginHorizontal:25,borderWidth:1, borderColor:"#D6D6D6", height:40,justifyContent:"center"}}
-          label='Select Project'
+          placeholder='Select Type'
           textColor='rgba(0, 0, 0, 0.38)'
           fontSize={13}
           data={data}
@@ -96,7 +99,7 @@ function BasicDetailsScreen({navigation}) {
         <Text style={styles.textForm}>CUSTOMER</Text>
         <Dropdown
           containerStyle={{margin:10, marginHorizontal:25,borderWidth:1, borderColor:"#D6D6D6", height:40,justifyContent:"center"}}
-          label='Select Type'
+          placeholder='Select Customer'
           fontSize={13}
           data={data}
           animationDuration={0}
@@ -117,7 +120,7 @@ function BasicDetailsScreen({navigation}) {
           containerStyle={{margin:10, marginHorizontal:25,borderWidth:1, borderColor:"#D6D6D6", height:40,justifyContent:"center"}}
           data={data}
           fontSize={13}
-          label='Select Customer'
+          placeholder='Select Worker'
           animationDuration={0}
           baseColor={"rgba(0, 0, 0, 0.6)"}
           inputContainerStyle={{borderBottomColor:"transparent",marginBottom:15, marginHorizontal:10}}
@@ -249,7 +252,7 @@ function FinalDetailsScreen({navigation}) {
         <Text style={styles.textForm}>PREREQUISITES</Text>
         <Dropdown
           containerStyle={{margin:10, marginHorizontal:25,borderWidth:1, borderColor:"#D6D6D6", height:40,justifyContent:"center"}}
-          label='Select Task'
+          placeholder='Select Task'
           fontSize={13}
           data={data}
           animationDuration={0}
