@@ -11,6 +11,8 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import Home from './Home';
+import Calls from './Calls';
+
 import NewTask from './NewTask';
 import Activity from './Activity';
 import AllProjects from './AllProjects';
@@ -44,6 +46,13 @@ function ChecklistScreen({navigation}){
 function ActivityScreen({navigation}) {
   return (
     <Activity navigation={navigation}/>
+  );
+}
+
+
+function CallsScreen({navigation}) {
+  return (
+    <Calls navigation={navigation}/>
   );
 }
 
@@ -93,6 +102,13 @@ function MyDrawer() {
   return (
     <Drawer.Navigator style={{flex:1}} drawerContent={props => CustomDrawerContent(props)}>
         <Drawer.Screen name="Home" component={HomeScreen} options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/settings.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+         <Drawer.Screen name="Calls" component={CallsScreen} options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/settings.png")}
             resizeMode="contain"
