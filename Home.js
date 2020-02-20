@@ -89,7 +89,7 @@ class Home extends Component{
                         source={require('./Icons/calendar.png')}
                     />
                   </TouchableHighlight>
-                  <Text style={styles.textPTOCalls}>Request PTO</Text>
+                  <Text style={styles.textPTOCalls}>Contacts</Text>
                 </View>
                 <View style={[styles.buttonPTO,styles.buttonCalls]}>
                   <TouchableHighlight style={styles.imageContainer3} >

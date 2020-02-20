@@ -12,6 +12,7 @@ import {
 } from '@react-navigation/drawer';
 import Home from './Home';
 import NewTask from './NewTask';
+import Activity from './Activity';
 import AllProjects from './AllProjects';
 
 function HomeScreen({navigation}){
@@ -43,15 +44,10 @@ function ChecklistScreen({navigation}){
   );
 }
 
-function ActivityScreen({navigation}){
+
+function ActivityScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={()=>navigation.navigate('Home')}
-      />
-    </View>
+    <Activity navigation={navigation}/>
   );
 }
 
@@ -107,21 +103,21 @@ function MyDrawer() {
             style={{ width: 20, height: 20, tintColor: tintColor }}
           />
         )}}/> 
-        <Drawer.Screen name="Tasks" component={TasksScreen}options={{drawerIcon:({ tintColor }) => (
+        <Drawer.Screen name="All Tasks" component={TasksScreen}options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/task.png")}
             resizeMode="contain"
             style={{ width: 20, height: 20, tintColor: tintColor }}
           />
         )}}/> 
-        <Drawer.Screen name="Projects" component={ProjectsScreen}options={{drawerIcon:({ tintColor }) => (
+        <Drawer.Screen name="All Projects" component={ProjectsScreen}options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/project.png")}
             resizeMode="contain"
             style={{ width: 20, height: 20, tintColor: tintColor }}
           />
         )}}/> 
-        <Drawer.Screen name="Checklist" component={ChecklistScreen} options={{drawerIcon:({ tintColor }) => (
+        <Drawer.Screen name="Task Checklist" component={ChecklistScreen} options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/checkList.png")}
             resizeMode="contain"
@@ -129,7 +125,7 @@ function MyDrawer() {
           />
         )}}/> 
       
-        <Drawer.Screen name="Activity" component={ActivityScreen}options={{drawerIcon:({ tintColor }) => (
+        <Drawer.Screen name="Record Activity" component={ActivityScreen}options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/activity.png")}
             resizeMode="contain"
@@ -139,21 +135,6 @@ function MyDrawer() {
     </Drawer.Navigator>
   );
 }
-
-// const Stack = createStackNavigator();
-
-
-// function MyStack() {
-//   return (
-//   <Stack.Navigator>
-//         <Stack.Screen name="Home" component={HomeScreen} />
-//         <Stack.Screen name="PTO" component={Ptocheck} />
-//       </Stack.Navigator>
-        
-//   );
-// }
-
-
 export default function App() {
   return (
     <NavigationContainer>
