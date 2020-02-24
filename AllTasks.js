@@ -3,12 +3,12 @@ import {StyleSheet, Text, View, Image,ImageBackground, Button,TouchableHighlight
 import { TextInput, ScrollView } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 
-class ProjectDetails extends Component{
+class TaskDetails extends Component{
   constructor(props){
     super(props)
   }
   static navigationOptions ={
-    title:'ProjectDetails'
+    title:'TaskDetails'
   };
   render(){
     return(
@@ -18,9 +18,9 @@ class ProjectDetails extends Component{
             <View style={{flexDirection:"row",justifyContent:"space-between"}}>
                 <View >
                 <TouchableHighlight 
-                  style={styles.imageContainer} 
-                  onPress={()=>this.props.navigation.navigate("AllProjectsHome")}
-                  >
+                    style={styles.imageContainer}
+                    onPress={()=>this.props.navigation.navigate("AllTasksHome")}
+                >
                     <View style={{flexDirection:"row",justifyContent:"space-between"}}>
                     <Image 
                         style={styles.image}
@@ -38,131 +38,49 @@ class ProjectDetails extends Component{
                 </TouchableHighlight>
                 
                 <TouchableHighlight style={[styles.imageContainer,styles.imageContainer2]} >
-                <ImageBackground
-                  source={require("./Icons/clockCircle.png")}
-                  resizeMode="contain"
-                  style={{ width: 20, height: 20, alignItems:'center',justifyContent:'center' }}
-                >
-                  <Image
-                    source={require("./Icons/clockLeg.png")}
-                    resizeMode="contain"
-                    style={{ width: 10, height: 10, marginLeft:3 }}
-                  />  
-                </ImageBackground>
+                    <Image 
+                        style={styles.image2}
+                        source={require('./Icons/upload.png')}
+                    />
+                </TouchableHighlight>
+                <TouchableHighlight style={[styles.imageContainer,styles.imageContainer2]} >
+                    <Image 
+                        style={styles.image3}
+                        source={require('./Icons/edit.png')}
+                    />
                 </TouchableHighlight>
                 </View>
             </View>
             <View style={{margin:10,marginHorizontal:25}}>
-              <Text style={styles.title}> Project Title</Text>
+              <Text style={styles.title}>Task Name</Text>
               <View style={{flexDirection:"row",marginVertical:5}}>
-                <Image 
-                  style={styles.image5}
-                  source={require('./Icons/ongoing.png')}
-                />
-                <Text style={styles.textTaskType}>Ongoing |</Text>
-                <Text style={styles.textTaskType}>Start Date - End Date</Text>
+                <Text style={styles.textTaskName}>Task Details</Text>
               </View>
             </View>
           </View>
-          <View style={{flex:4,marginVertical:10,marginHorizontal:30}}>
-              <View>
-                    <View style={{flexDirection:'row',justifyContent:"space-between"}}>
-                        <Text style={styles.subtitle}>TASKS</Text>
-                        <TouchableHighlight style={styles.button2}>
-                          <Text style={{color:"#3FA7D6",fontSize:13}}>VIEW ALL</Text>
-                        </TouchableHighlight>
-                    </View>
-                    <View style={{flexDirection:"column"}}>
-                        <View style={{flexDirection:"column",marginVertical:10}}>
-                          <Text style={styles.textLocation}>Location</Text>
-                          <Text style={styles.textTaskName}>Task Type</Text>
-                          <Text style={styles.textTaskType}>with Contact Name</Text>
-                        </View> 
-                        <View style={{flexDirection:"column",marginVertical:10}}>
-                          <Text style={styles.textLocation}>Location</Text>
-                          <Text style={styles.textTaskName}>Task Type</Text>
-                          <Text style={styles.textTaskType}>with Contact Name</Text>
-                        </View> 
-                    </View>
-                    <View style={{flexDirection:"row",marginVertical:10,alignItems:"center"}}>
-                      <TouchableHighlight style={styles.circle2}>
-                        <Text style={{color:"white", fontSize:24,fontWeight:"800",marginTop:-3}}>+</Text>
-                      </TouchableHighlight>
-                      <Text style={styles.textNewTask}>New Task</Text>
-                    </View>
-              </View>
-              <View>
-                    <View style={{flexDirection:'row',justifyContent:"space-between"}}>
-                        <Text style={styles.subtitle}>ARTIFACTS</Text>
-                        <TouchableHighlight style={styles.button2}>
-                          <Text style={{color:"#3FA7D6",fontSize:13}}>VIEW ALL</Text>
-                        </TouchableHighlight>
-                    </View>
-                    <View style={{flexDirection:"column"}}>
-                        <View style={{flexDirection:"column",marginVertical:10}}>
-                          <Text style={styles.textLocation}>Filename</Text>
-                          <Text style={styles.textTaskName}>Artifact Type</Text>
-                          <Text style={styles.textTaskType}>Artifact Type</Text>
-                        </View> 
-                        <View style={{flexDirection:"column",marginVertical:10}}>
-                          <Text style={styles.textLocation}>Location</Text>
-                          <Text style={styles.textTaskName}>Artifact Type</Text>
-                          <Text style={styles.textTaskType}>Artifact Type</Text>
-                        </View> 
-                    </View>
-                    <View style={{flexDirection:"row",marginVertical:10,alignItems:"center"}}>
-                      <TouchableHighlight style={{height:25,width:25}} >
-                        <Image 
-                        style={styles.image6}
-                        source={require('./Icons/upload.png')}
-                        />
-                      </TouchableHighlight>
-                      <Text style={styles.textNewTask}>Upload</Text>
-                    </View>
-              </View>      
+          <View style={{flex:4,marginVertical:10,marginHorizontal:25,flexDirection:"column"}}>             
+                    <Text style={styles.subtitle}>DESCRIPTION</Text>
+                    <Text style={styles.textField}>Lorem ipsum dolor sit amet, consectetur dipiscing elit. Dis eu nullam eu, eu dui mauris felis. Cursus risus eget arcu feugiat ut donec id. Dui morbi eros cursus nunc interdum eu sit cras.</Text>
+                    <Text style={styles.subtitle}>ASSOCIATED PROJECT</Text>
+                    <Text style={styles.textField}>Project Title</Text>
+                    <Text style={styles.subtitle}>ASSIGNED TO</Text>
+                    <Text style={styles.textField}>Worker Name</Text>
+                    <Text style={styles.subtitle}>PROJECT START/END DATE</Text>
+                    <Text style={styles.textField}>Oct 10 (Today)-> Oct 14</Text>
+                    <Text style={styles.subtitle}>STATUS</Text>
+                    <Text style={styles.textField}>Created</Text>
+                    <Text style={styles.subtitle}>PRIORITY</Text>
+                    <Text style={styles.textField}>Priority Level</Text>
+                    <Text style={styles.subtitle}>BILLABLE TO CUSTOMER?</Text>
+                    <Text style={styles.textField}>Yes</Text>
+                    <Text style={styles.subtitle}>PREREQUISITES</Text>
+                    <Text style={styles.textField}>None</Text>
+                    <Text style={styles.subtitle}>ADDED ON</Text>
+                    <Text style={styles.textField}>Oct 10 (Today)</Text>
+                    <Text style={styles.subtitle}>ADDED BY</Text>
+                    <Text style={styles.textField}>Employee Name</Text>
           </View>
-          <View style={styles.footer}>
-            <View style={{flex:8,flexDirection:'row',justifyContent:'space-between'}}>
-                <View style={styles.buttonPTO}>
-                  <TouchableHighlight style={styles.imageContainer4} >
-                    <Image 
-                        style={styles.image7}
-                        source={require('./Icons/forms.png')}
-                    />
-                  </TouchableHighlight>
-                  <Text style={styles.textPTOCalls}>Forms</Text>
-                </View>
-                <View style={[styles.buttonPTO,styles.buttonCalls]}>
-                  <TouchableHighlight style={styles.imageContainer4} >
-                    <Image 
-                        style={styles.image7}
-                        source={require('./Icons/comments.png')}
-                    />
-                  </TouchableHighlight>
-                  <Text style={styles.textPTOCalls}>Comments</Text>
-                </View>
-            </View>
-            <View style={{flex:8,flexDirection:'row',justifyContent:'space-between'}}>
-                <View style={styles.buttonPTO}>
-                  <TouchableHighlight style={styles.imageContainer4} >
-                    <Image 
-                        style={styles.image8}
-                        source={require('./Icons/contacts.png')}
-                    />
-                  </TouchableHighlight>
-                  <Text style={styles.textPTOCalls}>Contacts</Text>
-                </View>
-                <View style={[styles.buttonPTO,styles.buttonCalls]}>
-                  <TouchableHighlight style={styles.imageContainer4} >
-                    <Image 
-                        style={styles.image7}
-                        source={require('./Icons/newemployee.png')}
-                    />
-                  </TouchableHighlight>
-                  <Text style={styles.textPTOCalls}>New Employee</Text>
-                </View>
-            </View>
-          </View>  
+          
         </View>
       </ScrollView>
     );
@@ -170,7 +88,7 @@ class ProjectDetails extends Component{
 }
 
 
-class AllProjectsHome extends Component{
+class AllTasksHome extends Component{
     render(){
       return(
         <View style={{flex:1}}>
@@ -183,7 +101,7 @@ class AllProjectsHome extends Component{
                         style={styles.image}
                         source={require('./Icons/back.png')}
                     />
-                    <Text style={{marginRight:20}}>Projects</Text>
+                    <Text style={{marginRight:20}}>Tasks</Text>
                     </View>
                 </TouchableHighlight>
                 </View>
@@ -231,48 +149,64 @@ class AllProjectsHome extends Component{
                     </View>
                 </View>
                 <View style={{flex:1,margin:10,marginHorizontal:25}}>
-                    <Text style={styles.subtitle}>ONGOING PROJECTS</Text>
+                    <Text style={styles.subtitle}>TODAY'S TASKS</Text>
                     <View style={{flexDirection:"column"}}>
-                      <View style={{flexDirection:"row",justifyContent:"space-between",margin:10,marginHorizontal:25}}>
+                      <View style={{flexDirection:"row",justifyContent:"space-between",marginVertical:10}}>
                         <TouchableHighlight 
                           style={styles.circle}
-                          onPress={() => this.props.navigation.navigate('ProjectDetails')} 
+                          onPress={() => this.props.navigation.navigate('TaskDetails')} 
                         >
                           <Text>1</Text>
                         </TouchableHighlight>
                         <View style={{flexDirection:"column"}}>
-                          <Text style={styles.textLocation}>Project title</Text>
-                          <Text style={styles.textTaskName}>Customer name</Text>
-                          <Text style={styles.textTaskType}>Start Date - End Date</Text>
+                            <Text style={styles.textLocation}>12:00 PM, Location</Text>
+                            <Text style={styles.textTaskName}>Task Name</Text>
+                            <Text style={styles.textTaskType}>TASK TYPE</Text>
                         </View> 
+                        <Image 
+                            style={styles.image9}
+                            source={require('./Icons/upload.png')}
+                        />
+                        <Image 
+                            style={styles.image10}
+                            source={require('./Icons/checkIn.png')}
+                        />
                       </View>
-                      <View style={{flexDirection:"row",justifyContent:"space-between",margin:10,marginHorizontal:25}}>
+                      <View style={{flexDirection:"row",justifyContent:"space-between",marginVertical:10,}}>
                         <TouchableHighlight 
-                          onPress={() => this.props.navigation.navigate('ProjectDetails')} 
+                          onPress={() => this.props.navigation.navigate('TaskDetails')} 
                           style={styles.circle}
                         >
                           <Text>2</Text>
                         </TouchableHighlight>
                         <View style={{flexDirection:"column"}}>
-                          <Text style={styles.textLocation}>Project title</Text>
-                          <Text style={styles.textTaskName}>Customer name</Text>
-                          <Text style={styles.textTaskType}>Start Date - End Date</Text>
+                            <Text style={styles.textLocation}>12:00 PM, Location</Text>
+                            <Text style={styles.textTaskName}>Task Name</Text>
+                            <Text style={styles.textTaskType}>TASK TYPE</Text>
                         </View> 
+                        <Image 
+                            style={styles.image9}
+                            source={require('./Icons/upload.png')}
+                        />
+                        <Image 
+                            style={styles.image10}
+                            source={require('./Icons/checkIn.png')}
+                        />
                       </View>
                     </View>
                 </View>
                 <View style={{flex:1,margin:10,marginHorizontal:25}}>
-                    <Text style={styles.subtitle}>UPCOMING PROJECTS</Text>
+                    <Text style={styles.subtitle}>FUTURE TASKS</Text>
                     <View style={{flexDirection:"column"}}>
                         <View style={{flexDirection:"column",marginVertical:10}}>
-                          <Text style={styles.textLocation}>Project title</Text>
-                          <Text style={styles.textTaskName}>Customer name</Text>
-                          <Text style={styles.textTaskType}>Start Date - End Date</Text>
+                            <Text style={styles.textLocation}>12:00 PM, Location</Text>
+                            <Text style={styles.textTaskName}>Task Name</Text>
+                            <Text style={styles.textTaskType}>TASK TYPE</Text>
                         </View> 
                         <View style={{flexDirection:"column",marginVertical:10}}>
-                          <Text style={styles.textLocation}>Project title</Text>
-                          <Text style={styles.textTaskName}>Customer name</Text>
-                          <Text style={styles.textTaskType}>Start Date - End Date</Text>
+                            <Text style={styles.textLocation}>12:00 PM, Location</Text>
+                            <Text style={styles.textTaskName}>Task Name</Text>
+                            <Text style={styles.textTaskType}>TASK TYPE</Text>
                         </View> 
                     </View>
                 </View>
@@ -285,18 +219,18 @@ class AllProjectsHome extends Component{
 
 const Stack=createStackNavigator();
 
-class AllProjects extends Component{
+class AllTasks extends Component{
   render(){
     return(
       <Stack.Navigator headerMode="none">
-        <Stack.Screen  name="AllProjectsHome" component={AllProjectsHome}/>
-        <Stack.Screen  name="ProjectDetails" component={ProjectDetails}/> 
+        <Stack.Screen  name="AllTasksHome" component={AllTasksHome}/>
+        <Stack.Screen  name="TaskDetails" component={TaskDetails}/> 
       </Stack.Navigator>
     );
   }
 }
 
-export default AllProjects;
+export default AllTasks;
 
 const styles = StyleSheet.create({
 
@@ -366,6 +300,14 @@ image7:{
 image8:{
   height:13,
   width:20,
+},
+image9:{
+    height:25,
+    width:20,
+},
+image10:{
+    height:26,
+    width:19,
 },
 inputForm:{
     margin:10,
@@ -475,4 +417,11 @@ inputForm:{
         marginTop:15,
         marginLeft:0,
       },
+      textField:{
+        fontWeight:"500",
+        fontSize:13,
+        color:"rgba(0, 0, 0, 0.87)",
+        marginVertical:5,
+        marginBottom:15,
+      }
 })
