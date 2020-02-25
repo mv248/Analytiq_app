@@ -13,10 +13,18 @@ import NewTask from './NewTask';
 import AllProjects from './AllProjects';
 import AllTasks from './AllTasks';
 import Activity from './Activity';
+import Calls from './Activity';
+
 
 function HomeScreen({navigation}){
   return (
     <Home navigation={navigation}/>
+  );
+}
+
+function CallsScreen({navigation}){
+  return (
+    <Calls navigation={navigation}/>
   );
 }
 function TasksScreen({navigation}) {
@@ -96,6 +104,13 @@ function MyDrawer() {
   return (
     <Drawer.Navigator style={{flex:1}} drawerContent={props => CustomDrawerContent(props)}>
         <Drawer.Screen name="Home" component={HomeScreen} options={{drawerIcon:({ tintColor }) => (
+          <Image
+            source={require("./Icons/settings.png")}
+            resizeMode="contain"
+            style={{ width: 20, height: 20, tintColor: tintColor }}
+          />
+        )}}/> 
+         <Drawer.Screen name="Calls" component={CallsScreen} options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/settings.png")}
             resizeMode="contain"
