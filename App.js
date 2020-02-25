@@ -12,6 +12,7 @@ import Home from './Home';
 import NewTask from './NewTask';
 import AllProjects from './AllProjects';
 import AllTasks from './AllTasks';
+import Activity from './Activity';
 
 function HomeScreen({navigation}){
   return (
@@ -23,7 +24,11 @@ function TasksScreen({navigation}) {
     <NewTask navigation={navigation}/>
   );
 }
-function ProjectsScreen({navigation}){
+function ActivityScreen({navigation}) {
+  return (
+    <Activity navigation={navigation}/>
+ );
+}function ProjectsScreen({navigation}){
   return (
     <AllProjects navigation={navigation}/>
   );
@@ -42,39 +47,6 @@ function ChecklistScreen({navigation}){
 function TimesheetScreen({navigation}){
   return (
     <AllTasks navigation={navigation}/>
-  );
-}
-function ActivityScreen({navigation}){
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={()=>navigation.navigate('Home')}
-      />
-    </View>
-  );
-}
-function PTOScreen({navigation}){
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={()=>navigation.navigate('Home')}
-      />
-    </View>
-  );
-}
-function ExpensesScreen({navigation}){
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Home"
-        onPress={()=>navigation.navigate('Home')}
-      />
-    </View>
   );
 }
 function SettingsScreen({navigation}){
@@ -130,14 +102,7 @@ function MyDrawer() {
             style={{ width: 20, height: 20, tintColor: tintColor }}
           />
         )}}/> 
-        <Drawer.Screen name="Tasks" component={TasksScreen}options={{drawerIcon:({ tintColor }) => (
-          <Image
-            source={require("./Icons/task.png")}
-            resizeMode="contain"
-            style={{ width: 20, height: 20, tintColor: tintColor }}
-          />
-        )}}/> 
-        <Drawer.Screen name="Projects" component={ProjectsScreen}options={{drawerIcon:({ tintColor }) => (
+        <Drawer.Screen name="All Tasks" component={TasksScreen}options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/project.png")}
             resizeMode="contain"
@@ -167,20 +132,6 @@ function MyDrawer() {
         <Drawer.Screen name="Activity" component={ActivityScreen}options={{drawerIcon:({ tintColor }) => (
           <Image
             source={require("./Icons/activity.png")}
-            resizeMode="contain"
-            style={{ width: 20, height: 20, tintColor: tintColor }}
-          />
-        )}}/> 
-        <Drawer.Screen name="PTO" component={PTOScreen}options={{drawerIcon:({ tintColor }) => (
-          <Image
-            source={require("./Icons/ptoRequest.png")}
-            resizeMode="contain"
-            style={{ width: 20, height: 20, tintColor: tintColor }}
-          />
-        )}}/> 
-        <Drawer.Screen name="Expenses" component={ExpensesScreen}options={{drawerIcon:({ tintColor }) => (
-          <Image
-            source={require("./Icons/expense.png")}
             resizeMode="contain"
             style={{ width: 20, height: 20, tintColor: tintColor }}
           />

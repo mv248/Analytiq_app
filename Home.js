@@ -35,7 +35,7 @@ class Home extends Component{
                 </TouchableHighlight>
               </View>
               <View>
-                <View style={{flexDirection:"row",justifyContent:"space-between",margin:10,marginHorizontal:25}}>
+                <View style={{flexDirection:"row",justifyContent:"space-between",marginHorizontal:25}}>
                   <TouchableHighlight style={styles.circle}>
                     <Text>1</Text>
                   </TouchableHighlight>
@@ -53,7 +53,7 @@ class Home extends Component{
                     source={require('./Icons/checkIn.png')}
                   />
                 </View>
-                <View style={{flexDirection:"row",justifyContent:"space-between",margin:10,marginHorizontal:25}}>
+                <View style={{flexDirection:"row",justifyContent:"space-between",marginHorizontal:25}}>
                   <TouchableHighlight style={styles.circle}>
                     <Text>2</Text>
                   </TouchableHighlight>
@@ -72,7 +72,7 @@ class Home extends Component{
                   />
                 </View>
               </View>
-              <View style={{flexDirection:"row",margin:10,marginHorizontal:30}}>
+              <View style={{flexDirection:"row",margin:10,marginHorizontal:25}}>
                 <TouchableHighlight style={styles.circle2}>
                   <Text style={{color:"white", fontSize:24,fontWeight:"800",marginTop:-3}}>+</Text>
                 </TouchableHighlight>
@@ -84,12 +84,12 @@ class Home extends Component{
               <View style={{flex:8,flexDirection:'row',justifyContent:'space-between'}}>
                 <View style={styles.buttonPTO}>
                   <TouchableHighlight style={styles.imageContainer3} >
-                    <Image 
+                    <Image
                         style={styles.image2}
                         source={require('./Icons/calendar.png')}
                     />
                   </TouchableHighlight>
-                  <Text style={styles.textPTOCalls}>Request PTO</Text>
+                  <Text style={styles.textPTOCalls}>Contacts</Text>
                 </View>
                 <View style={[styles.buttonPTO,styles.buttonCalls]}>
                   <TouchableHighlight style={styles.imageContainer3} >
