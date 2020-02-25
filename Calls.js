@@ -247,8 +247,7 @@ function Contacts({ navigation }) {
 
     return (
 
-        <View style={{ flex: 1 }}>
-
+        <View style={{ flex: 1 }}> 
             <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }}>
                 <View style={{ alignSelf: 'flex-end' }}><Text style={styles.textHeader}>New Contact</Text>
                 </View>
