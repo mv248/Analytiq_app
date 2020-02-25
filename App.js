@@ -13,7 +13,7 @@ import NewTask from './NewTask';
 import AllProjects from './AllProjects';
 import AllTasks from './AllTasks';
 import Activity from './Activity';
-import Calls from './Activity';
+import Calls from './Calls';
 
 
 function HomeScreen({navigation}){
